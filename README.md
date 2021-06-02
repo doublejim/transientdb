@@ -17,7 +17,7 @@ import {TransientDB} from './transientdb.js';
 
 let storage = new TransientDB;
 storage.insert({"horses": 5, "literature": "book", "comment": "this is a comment"})
-       .insert({"horses": 5, "literature": "newspaper", "comment": ""})
+       .insert({"horses": 5, "literature": "newspaper", "comment": "", "hasIssues": false})
        .insert({"horses": 6, "literature": "magazine", "comment": "this is also a comment"});
 
 let lookup1 = storage.where({"horses": 5});
@@ -27,7 +27,7 @@ console.log("Lookup1:", lookup1);
 Lookup1:
 [
   {"horses": 5, "literature": "book", "comment": "this is a comment"},
-  {"horses": 5, "literature": "newspaper", "comment": ""}
+  {"horses": 5, "literature": "newspaper", "comment": "", "hasIssues": false}
 ]
 */
 
@@ -38,7 +38,7 @@ console.log("Lookup2:", lookup2);
 Written to console:
 Lookup2:
 [
-  {"horses": 5, "literature": "newspaper", "comment": ""}
+  {"horses": 5, "literature": "newspaper", "comment": "", "hasIssues": false}
 ]
 */
 
