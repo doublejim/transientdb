@@ -1,4 +1,4 @@
-# TransientDB.js
+# TransientDB
 
 This library provides a basic, one-class, transient JavaScript database, that will be deleted when refreshing the page.
 
