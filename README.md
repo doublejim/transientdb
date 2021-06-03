@@ -1,6 +1,7 @@
 # TransientDB.js
 
-This library provides a one-class transient JavaScript database, that will be deleted when refreshing the page.
+This library provides a basic, one-class, transient JavaScript database, that will be deleted when refreshing the page.
+
 It has 3 methods:
 * *insert(obj)* : Insert a JavaScript object.
 * *where(obj)* : Retrieve objects where properties have specific values (similar to SQL: **select * where a = X and b = Y and c = Z, etc.**). This is currently the only way objects can be retrieved.
@@ -8,7 +9,10 @@ It has 3 methods:
 
 **Current state: Needs more testing, but should work.**
 
-Inserted objects will be frozen before they are inserted, to keep database consistency. This means that lookup results cannot have their top properties changed. If you try, it will normally trigger a JavaScript error. Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+- All of the inserted object keys/values will be stored, but only the primitives can be used in where() queries. The key/value pairs are stored in Maps (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), which means that they are always sorted, and can therefore be quickly searched through.
+
+- Inserted objects will be frozen before they are inserted, to keep database consistency. This means that lookup results cannot have their top properties changed. If you try, it will normally trigger a JavaScript error. Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+<br>Child objects are not frozen, but this will not impact the database.
 
 # Examples
 
