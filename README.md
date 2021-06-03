@@ -12,7 +12,7 @@ It has 3 methods:
 - All of the inserted object keys/values will be stored, but only the primitives can be used in where() queries. The key/value pairs are stored in Maps (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), which means that they are always sorted, and can therefore be quickly searched through.
 
 - Inserted objects will be frozen before they are inserted, to keep database consistency. This means that lookup results cannot have their top properties changed. If you try, it will normally trigger a JavaScript error. Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
-<br>Child objects are not frozen, but this will not impact the database.
+<br>Object values are not frozen, but this will not impact the database, since they aren't made searchable.
 
 # Examples
 
