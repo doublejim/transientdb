@@ -143,10 +143,16 @@ export class TransientDB
             // Delete each object value from the indices.
             for (let [key, value] of Object.entries(result))
             {
-                if (this.indices.has(key))
-                {
-                    this.indices.get(key).delete(value);
-                }
+				if (this.indices.has(key))
+				{
+					let column = this.indices.get(key);
+
+					if (column.has(value))
+					{
+						let entry = column.get(value);
+						entry.delete(id);
+					}
+				}
             }
 
             // Lastly, delete from the stored objects.
