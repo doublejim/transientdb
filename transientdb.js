@@ -38,7 +38,7 @@ export class TransientDB
 
                 if (column.has(value))
                 {
-                    foundKeys = column.get(value);
+                    foundKeys = new Map(column.get(value));
                 }
             }
 
