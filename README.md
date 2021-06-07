@@ -7,7 +7,7 @@ It has 3 methods:
 * *where(obj)* : Retrieve objects where properties have specific values (similar to SQL: **select * where a = X and b = Y and c = Z, etc.**). This is currently the only way objects can be retrieved.
 * *removeWhere(obj)* : Delete objects where properties have specific values.
 
-**Current state: Needs more testing, but should work.**
+**Current state: Needs more testing.**
 
 - All of the inserted object keys/values will be stored, but only the primitives can be used in where() queries. The key/value pairs are stored in Maps (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), which means that they are always sorted, and can therefore be quickly searched through.
 
